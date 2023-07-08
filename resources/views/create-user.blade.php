@@ -20,7 +20,7 @@
             <!-- <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt=""> -->
         </div>
 
-        <form action="{{ route('register') }}" method="post" class="p-3 mt-3"> @csrf
+        <form action="{{ route('register') }}" method="POST" class="p-3 mt-3"> @csrf
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
                 <input type="email" class="@error('email') is-invalid @enderror" name="email" id="email" placeholder="Email Address" required>
@@ -42,7 +42,7 @@
             <!-- for comfirm password  -->
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="password" class="" name="password" id="password-confirm" name="password_confirmation" placeholder="confirm password" required>
+                <input type="password" id="password-confirm" name="password_confirmation" placeholder="confirm password" required>
 
             </div>
             <button class="btn mt-3">Sign up</button>

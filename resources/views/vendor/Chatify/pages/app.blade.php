@@ -8,8 +8,25 @@
                 <a href="#"><i class="fas fa-inbox"></i> <span class="messenger-headTitle">MESSAGES</span> </a>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
-                    <a href="#"><i class="fas fa-cog settings-btn"></i></a>
-                    <a href="#" class="listView-x"><i class="fas fa-times"></i></a>
+                    
+                    <a class="tooltip" href="#"><i class="fas fa-cog settings-btn"></i>
+                        <span class="tooltiptext">Settings</span>
+                    </a>
+                    
+
+                    <!-- <i class="fas fa-sign-out-alt"></i> -->
+
+
+                    <!-- <a href="#" class="listView-x"><i class="fas fa-times"></i></a> -->
+
+                    <a class="tooltip"><i class="fas fa-sign-out-alt"
+                    onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                    ></i>
+                        <span class="tooltiptext">Logout</span>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf
+                    </form>
+
                 </nav>
             </nav>
             {{-- Search input --}}
