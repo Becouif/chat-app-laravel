@@ -21,8 +21,17 @@
         </div>
 
         <form action="{{ route('register') }}" method="POST" class="p-3 mt-3"> @csrf
-            <div class="form-field d-flex align-items-center">
+				<div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
+                <input type="text" class="@error('name') is-invalid @enderror" name="name" id="name" placeholder="Username" required>
+                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-envelope"></span>
                 <input type="email" class="@error('email') is-invalid @enderror" name="email" id="email" placeholder="Email Address" required>
                 @error('email')
                                     <span class="invalid-feedback" role="alert">
